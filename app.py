@@ -12,12 +12,12 @@ app = Flask(__name__)
 
 person = {
     'last_name' : '王',
-    'first_name': '元平',
+    'first_name': '帅平',
 
-    'address' : '湖北师范大学6-530',
+    'address' : '阮辉职业技术学校',
     'job': 'Python developer',
     'tel': '0678282923',
-    'email': 'kuaikuai.1998517@gmail.com',
+    'email': 'kuaikuai@gmail.com',
     'description' : '我一直从事于web方面的工作，掌握的前端技术有ajax，Vue，js，div+css，html css，同事我也了解java语言和数据库表结构这块，更后台人员能更有效的沟通。我的性格方面不算外向，也不算内向，跟朋友，同事相处，比较外向，在工作中，代码开发时，我是比较内向的，我喜欢全心全意的投入工作中。我也喜欢交朋友，偶尔跟朋友聚聚，聊聊。对于工作我总是抱着认真负责，有责任心，吃苦耐劳的态度工作。',
     'social_media' : [
         {
@@ -38,7 +38,7 @@ person = {
         }
     ],
     'img': 'img_nono.jpg',
-    '经验' : [
+    'EXPERIENCES' : [
         {
             'title' : 'Web 开发人员',
             'company': 'AZULIK',
@@ -58,25 +58,25 @@ person = {
             'timeframe' : 'October 2015 - October 2016'
         }
     ],
-    '教育' : [
+    'EDUCATION' : [
         {
             'university': '湖北师范大学',
-            'degree': 'Projets informatiques et Startégies d\'entreprise (PISE)',
-            'description' : 'Gestion de projets IT, Audit, Programmation',
+            'degree': '学士学位',
+            'description' : '从事项目实战',
             'mention' : 'Bien',
             'timeframe' : '2015 - 2016'
         },
         {
             'university': '昆明西点学校',
-            'degree': 'Master en Management global',
-            'description' : 'Fonctions supports (Marketing, Finance, Ressources Humaines, Comptabilité)',
+            'degree': '学士学位',
+            'description' : '知识积累',
             'mention' : 'Bien',
             'timeframe' : '2015'
         },
         {
             'university': '昭阳一中',
-            'degree': 'CPGE Economie & Gestion',
-            'description' : 'Préparation au concours de l\'ENS Cachan, section Economie',
+            'degree': '学士学位',
+            'description' : '开始进入软件生涯',
             'mention' : 'N/A',
             'timeframe' : '2010 - 2012'
         }

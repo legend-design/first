@@ -11,13 +11,14 @@ import csv, re, operator
 app = Flask(__name__)
 
 person = {
-    'first_name': 'Nohossat',
-    'last_name' : 'TRAORE',
-    'address' : '9 rue Léon Giraud · PARIS · FRANCE',
-    'job': 'Web developer',
+    'last_name' : '王',
+    'first_name': '元平',
+
+    'address' : '湖北师范大学6-530',
+    'job': 'Python developer',
     'tel': '0678282923',
-    'email': 'nohossat.tra@yahoo.com',
-    'description' : 'Suite à une expérience internationale en développement web et dans le domaine des arts, l’impact de l’intelligence artificielle dans nos vies me surprend de jour en jour. \n Aujourd’hui, je souhaite changer de cap et comprendre les secrets que recèlent nos données. J’aimerais mettre à profit ces découvertes au service des entreprises/associations à dimension sociale.',
+    'email': 'kuaikuai.1998517@gmail.com',
+    'description' : '我一直从事于web方面的工作，掌握的前端技术有ajax，Vue，js，div+css，html css，同事我也了解java语言和数据库表结构这块，更后台人员能更有效的沟通。我的性格方面不算外向，也不算内向，跟朋友，同事相处，比较外向，在工作中，代码开发时，我是比较内向的，我喜欢全心全意的投入工作中。我也喜欢交朋友，偶尔跟朋友聚聚，聊聊。对于工作我总是抱着认真负责，有责任心，吃苦耐劳的态度工作。',
     'social_media' : [
         {
             'link': 'https://www.facebook.com/nono',
@@ -36,44 +37,44 @@ person = {
             'icon' : 'fa-twitter'
         }
     ],
-    'img': 'img/img_nono.jpg',
-    'experiences' : [
+    'img': 'img_nono.jpg',
+    '经验' : [
         {
-            'title' : 'Web Developer',
+            'title' : 'Web 开发人员',
             'company': 'AZULIK',
-            'description' : 'Project manager and lead developer for several AZULIK websites.',
+            'description' : '多个 AZULIK 网站的项目经理和首席开发人员.',
             'timeframe' : 'July 2018 - November 2019'
         },
         {
-            'title' : 'Freelance Web Developer',
+            'title' : '自由网络开发人员',
             'company': 'Independant',
-            'description' : 'Create Wordpress websites for small and medium companies. ',
+            'description' : '中小型公司创建 Wordpress 网站。 ',
             'timeframe' : 'February 2017 - Present'
         },
         {
-            'title' : 'Sharepoint Intern',
+            'title' : 'Sharepoint实习生',
             'company': 'ALTEN',
-            'description' : 'Help to manage a 600 Sharepoint sites platform (audit, migration to Sharepoint newer versions)',
+            'description' : '帮助管理 600 个 Sharepoint 站点平台（审核、迁移到 Sharepoint 更新版本）',
             'timeframe' : 'October 2015 - October 2016'
         }
     ],
-    'education' : [
+    '教育' : [
         {
-            'university': 'Paris Diderot',
+            'university': '湖北师范大学',
             'degree': 'Projets informatiques et Startégies d\'entreprise (PISE)',
             'description' : 'Gestion de projets IT, Audit, Programmation',
             'mention' : 'Bien',
             'timeframe' : '2015 - 2016'
         },
         {
-            'university': 'Paris Dauphine',
+            'university': '昆明西点学校',
             'degree': 'Master en Management global',
             'description' : 'Fonctions supports (Marketing, Finance, Ressources Humaines, Comptabilité)',
             'mention' : 'Bien',
             'timeframe' : '2015'
         },
         {
-            'university': 'Lycée Turgot - Paris Sorbonne',
+            'university': '昭阳一中',
             'degree': 'CPGE Economie & Gestion',
             'description' : 'Préparation au concours de l\'ENS Cachan, section Economie',
             'mention' : 'N/A',
@@ -160,10 +161,10 @@ def main():
 					'labels': top_ten_list_labels,
 					'values': top_ten_list_vals,
 					'type': 'pie',
-					'insidetextfont': {'color': '#FFFFFF',
+					'insidetextfont': {'color': '#FFCCCC',
 										'size': '14',
 										},
-					'textfont': {'color': '#FFFFFF',
+					'textfont': {'color': '#CCFF99',
 										'size': '14',
 								},
 					}]

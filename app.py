@@ -11,13 +11,12 @@ import csv, re, operator
 app = Flask(__name__)
 
 person = {
+    'first_name': '平',
     'last_name' : '王',
-    'first_name': '帅平',
-
-    'address' : '阮辉职业技术学校',
-    'job': 'Python developer',
+    'address' : '湖北黄石市',
+    'job': '中级软件设计师',
     'tel': '0678282923',
-    'email': 'kuaikuai@gmail.com',
+    'email': 'nohossat.tra@yahoo.com',
     'description' : '我一直从事于web方面的工作，掌握的前端技术有ajax，Vue，js，div+css，html css，同事我也了解java语言和数据库表结构这块，更后台人员能更有效的沟通。我的性格方面不算外向，也不算内向，跟朋友，同事相处，比较外向，在工作中，代码开发时，我是比较内向的，我喜欢全心全意的投入工作中。我也喜欢交朋友，偶尔跟朋友聚聚，聊聊。对于工作我总是抱着认真负责，有责任心，吃苦耐劳的态度工作。',
     'social_media' : [
         {
@@ -37,48 +36,48 @@ person = {
             'icon' : 'fa-twitter'
         }
     ],
-    'img': 'img_nono.jpg',
-    'EXPERIENCES' : [
+    'img': 'img/img_nono.jpg',
+    'experiences' : [
         {
-            'title' : 'Web 开发人员',
-            'company': 'AZULIK',
-            'description' : '多个 AZULIK 网站的项目经理和首席开发人员.',
-            'timeframe' : 'July 2018 - November 2019'
+            'title' : '微信小程序开发',
+            'company': '湖师',
+            'description' : '实训实战',
+            'timeframe' : '2020-2021'
         },
         {
-            'title' : '自由网络开发人员',
-            'company': 'Independant',
-            'description' : '中小型公司创建 Wordpress 网站。 ',
-            'timeframe' : 'February 2017 - Present'
+            'title' : '数据库设计',
+            'company': '湖师',
+            'description' : '实训工作 ',
+            'timeframe' : '2019-2020'
         },
         {
-            'title' : 'Sharepoint实习生',
-            'company': 'ALTEN',
-            'description' : '帮助管理 600 个 Sharepoint 站点平台（审核、迁移到 Sharepoint 更新版本）',
-            'timeframe' : 'October 2015 - October 2016'
+            'title' : 'web开发',
+            'company': '湖师',
+            'description' : '购票网页开发',
+            'timeframe' : '2018-2019'
         }
     ],
-    'EDUCATION' : [
+    'education' : [
         {
-            'university': '湖北师范大学',
+            'university': '湖师',
             'degree': '学士学位',
-            'description' : '从事项目实战',
+            'description' : 'Gestion de projets IT, Audit, Programmation',
             'mention' : 'Bien',
-            'timeframe' : '2015 - 2016'
+            'timeframe' : '2021'
         },
         {
-            'university': '昆明西点学校',
+            'university': '湖师',
             'degree': '学士学位',
-            'description' : '知识积累',
+            'description' : 'Gestion de projets IT, Audit, Programmation',
             'mention' : 'Bien',
-            'timeframe' : '2015'
+            'timeframe' : '2021'
         },
         {
-            'university': '昭阳一中',
+            'university': '湖师',
             'degree': '学士学位',
-            'description' : '开始进入软件生涯',
-            'mention' : 'N/A',
-            'timeframe' : '2010 - 2012'
+            'description' : 'Gestion de projets IT, Audit, Programmation',
+            'mention' : 'Bien',
+            'timeframe' : '2021'
         }
     ],
     'programming_languages' : {
@@ -161,10 +160,10 @@ def main():
 					'labels': top_ten_list_labels,
 					'values': top_ten_list_vals,
 					'type': 'pie',
-					'insidetextfont': {'color': '#FFCCCC',
+					'insidetextfont': {'color': '#FFFFFF',
 										'size': '14',
 										},
-					'textfont': {'color': '#CCFF99',
+					'textfont': {'color': '#FFFFFF',
 										'size': '14',
 								},
 					}]

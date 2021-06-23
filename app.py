@@ -67,14 +67,14 @@ person = {
         },
         {
             'university': '湖师',
-            'degree': '学士学位',
+            'degree': '暂无',
             'description' : 'Gestion de projets IT, Audit, Programmation',
             'mention' : 'Bien',
             'timeframe' : '2021'
         },
         {
             'university': '湖师',
-            'degree': '学士学位',
+            'degree': '暂无',
             'description' : 'Gestion de projets IT, Audit, Programmation',
             'mention' : 'Bien',
             'timeframe' : '2021'

@@ -20,42 +20,72 @@
     <canvas id="bg"></canvas>
     <main id="content">
         <h1>
-            <div class="hex moved"></div><span>About the Dev</span></h1>
+            <div class="hex moved"></div><span>关于开发</span></h1>
         <div class="subtext" id="main">
-            <p>The name's Lin (which is short for Lindeun or Laighlin, depending on where you know me from). I'm a 24-year-old South Asian design student with a tech sort of background and a lot to say about the trends and direction of the contemporary design
-                world.</p>
-            <p>I wanted to be an engineer for most of my life. By the time I changed my mind about that, my liaison with the applied sciences had drastically altered my worldview already. This still informs much of my work and work ethic - design is no less
-                of a science in my eyes than physics or computing. (In other words, I like design as long as I can be a nerd about it.)</p>
+            <p>我叫是{{person.last_name}}{{person.first_name}} ，来自于{{person.address}} .我是一个24岁的湖师设计专业的学生，有技术背景，有很多关于当代设计世界的趋势和方向。</p>
+            <p>我一生大部分时间都想当工程师。到我改变主意的时候，我与应用科学的联系已经彻底改变了我的世界观。这仍然影响着我的工作和职业道德——在我看来，设计和物理或计算机一样，都是一门科学。（换句话说，只要我是一个书呆子，我就喜欢设计。）</p>
         </div>
         <h2>
-            <div class="hex"></div><span>Skills</span></h2>
+            <div class="hex"></div><span>技能</span></h2>
         <div class="subtext coll">
-            A good grasp of object-oriented programming and computing-related math as a whole. Proficient in CSS3 and HTML5; making significant inroads into JavaScript and JQuery. Adobe Illustrator is both enjoyable for me and putty in my hands. <i>Putty.</i>            In addition to my knowledge of coding, I also speak five human languages and am in the process of learning a few more.
+           良好的面向对象编程和计算相关数学作为一个整体。精通CSS3和HTML5;在JavaScript和JQuery方面取得了重大进展。<i>Putty.</i>除了编程知识，我还会说五种人类语言，而且我还在学习更多的语言。
         </div>
         <h2>
-            <div class="hex"></div><span>Hobbies & Interests</span></h2>
+            <div class="hex"></div><span>爱好和兴趣</span></h2>
         <div class="subtext coll">
-            Small indie coding projects (semi-professionally). Music (unprofessionally). Massively multiplayer online games (clumsily). Cooking (hungrily).
+            小型独立编码项目、音乐、打篮球、游泳、打游戏、喜欢和他人合作，喜欢结交朋友。对未知的东西很好奇，拥有够独立思考和探索的能力。
         </div>
         <h2>
-            <div class="hex"></div><span>Currently Working On</span></h2>
+            <div class="hex"></div><span>工作经历</span></h2>
         <div class="subtext coll">
-            An accessibility app for Android, a couple of desktop themes for a blogging platform I casually use, and a photography project detailing the interplay of natural and artifical in urban environments.
+            {% for experience in person.experiences %}
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">{{ experience.title }}</h3>
+                            <div class="time">{{ experience.timeframe }}</div>
+                        </div><!--//upper-row-->
+                        <div class="company">{{ experience.company }}</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>{{ experience.description }}</p>
+                    </div><!--//details-->
+                </div><!--//item-->
+                {% endfor %}
         </div>
-        
         <h2>
-            <div class="hex"></div><span>Find Me</span></h2>
+            <div class="hex"></div><span>教育经历</span></h2>
+        <div class="subtext coll">
+           {% for diploma in person.education %}
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">{{ diploma.degree }}</h3>
+                            <div class="time">{{ diploma.timeframe }}</div>
+                        </div><!--//upper-row-->
+                        <div class="company">{{ diploma.university }}</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>{{ diploma.description }}</p>
+                    </div><!--//details-->
+                </div><!--//item-->
+                {% endfor %}
+        </div>
+
+
+        <h2>
+            <div class="hex"></div><span>了解我</span></h2>
         <div class="subtext coll">
             <a>Twitter</a> | <a>Tumblr</a> | <a>Codepen</a> | <a>Behance</a>
         </div>
-        
+
         <h2>
-            <div class="hex"></div><span>Contact Me</span></h2>
+            <div class="hex"></div><span>联系我</span></h2>
         <div class="subtext coll">
             <ul>
-                <li>Phone: +12 345 678 90</li>
-                <li>E-mail: <a>lindeun@yahoo.com</a></li>
-                <li>Discord: <a>Laighlin#0371</a></li>
+                <li>电话: {{person.tel}}</li>
+                <li>邮箱: <a>{{person.email}}</a></li>
+                <li><img src="{{ url_for('static', filename='img/img_nono.jpg') }}" alt="" /></li>
             </ul>
         </div>
     </main>

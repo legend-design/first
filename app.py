@@ -105,19 +105,142 @@ def cv(person=person):
 @app.route('/callback', methods=['POST', 'GET'])
 def cb():
 	return gm(request.args.get('data'))
-   
+
 @app.route('/chart')
 def index():
-	return render_template('chartsajax.html',  graphJSON=gm())
+	return render_template('chartsajax.html',  graphJSON0 = gm0(),graphJSON1 = gm1(),graphJSON2 = gm2(),graphJSON3 = gm3()
+                           , graphJSON4 = gm4(), graphJSON5 = gm5(),graphJSON6 = gm6() ,graphJSON7 = gm7(),graphJSON8= gm8()
+                           , graphJSON9 = gm9(),graphJSON10 = gm10(),graphJSON11 = gm11(),graphJSON12 = gm12(), graphJSON13 = gm13(),
+                           graphJSON14 = gm14(), graphJSON15 = gm15() )
 
-def gm(country='United Kingdom'):
-	df = pd.DataFrame(px.data.gapminder())
 
-	fig = px.line(df[df['country']==country], x="year", y="gdpPercap")
+def gm0():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.scatter(df, x="flipper_length_mm", y='body_mass_g',color="species")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+def gm1():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.scatter(df, x="flipper_length_mm", y='body_mass_g',color="species" ,facet_col ='island',log_x=True)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
 
-	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-	return graphJSON
+def gm2():
+    df = pd.read_csv("penguins.csv")
+    fig = px.histogram(df, x="flipper_length_mm", y='body_mass_g', color="species")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+def gm3():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.scatter(df, x="flipper_length_mm", y='body_mass_g', color="species",marginal_y="rug", marginal_x="histogram")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+def gm4():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.box(df, x="body_mass_g", y="species", orientation="h", color="sex", notched=True)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
 
+def gm5():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.violin(df, y="bill_length_mm", x="island", color="sex", box=True, points="all")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm6():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.scatter(df, x="bill_length_mm", y="species", color="sex",  marginal_x="violin", marginal_y="box")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm7():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.scatter_matrix(df, dimensions=['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm','body_mass_g'], color='species')
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm8():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.parallel_coordinates(df,
+                                  color="species_id",
+                                  labels={"species_id":"species",
+                                          'bill_length_mm':'bill_length',
+                                          'bill_depth_mm':'bill_depth',
+                                          'flipper_length_mm':'flipper_length',
+                                          'body_mass_g':'body_mass'},
+                                  color_continuous_scale=px.colors.diverging.Tealrose,
+                                  color_continuous_midpoint=2)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm9():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.parallel_categories(df, color="species_id", color_continuous_scale=px.colors.sequential.Inferno)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm10():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.line(df, x="island", y="bill_depth_mm", color="species",
+                  line_group="species", hover_name="species",
+                  line_shape="spline", render_mode="svg")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm11():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig = px.area(df, x="island", y="bill_depth_mm", color="species",
+        line_group="species")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm12():
+    df = pd.read_csv("penguins.csv")
+    # gapminder = px.data.gapminder()
+    # gapminder2007 = gapminder.query('year == 2007')
+    fig =px.density_contour(df, x='bill_length_mm', y='bill_depth_mm', color="species")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+def gm13():
+    df = pd.read_csv("penguins.csv")
+    fig = px.density_heatmap(df, x='bill_length_mm', y='bill_depth_mm')
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm14():
+    df = pd.read_csv("penguins.csv")
+    fig =px.bar(df, x="island", y="flipper_length_mm", color="sex", barmode="group")
+
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm15():
+    df = pd.read_csv("penguins.csv")
+    fig =px.pie(df, values='flipper_length_mm', names='island')
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
 
 @app.route('/senti')
 def main():

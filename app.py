@@ -116,15 +116,13 @@ def index():
 
 def gm0():
     df = pd.read_csv("penguins.csv")
-    # gapminder = px.data.gapminder()
-    # gapminder2007 = gapminder.query('year == 2007')
+
     fig = px.scatter(df, x="flipper_length_mm", y='body_mass_g',color="species")
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return graphJSON
 def gm1():
     df = pd.read_csv("penguins.csv")
-    # gapminder = px.data.gapminder()
-    # gapminder2007 = gapminder.query('year == 2007')
+
     fig = px.scatter(df, x="flipper_length_mm", y='body_mass_g',color="species" ,facet_col ='island',log_x=True)
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return graphJSON

@@ -36,7 +36,7 @@ person = {
             'icon' : 'fa-twitter'
         }
     ],
-    'img': 'img/img_nono.jpg',
+    'img': 'img/img.jpg',
     'experiences' : [
         {
             'title' : '微信小程序开发',
@@ -60,24 +60,24 @@ person = {
     'education' : [
         {
             'university': '湖师',
-            'degree': '学士学位',
+            'degree': '进修学士学位',
+            'description' : 'Gestion de projets IT, Audit, Programmation',
+            'mention' : 'Bien',
+            'timeframe' : '2020'
+        },
+        {
+            'university': '湖师',
+            'degree': '进修学士学位',
             'description' : 'Gestion de projets IT, Audit, Programmation',
             'mention' : 'Bien',
             'timeframe' : '2021'
         },
         {
             'university': '湖师',
-            'degree': '暂无',
+            'degree': '获得学士学位',
             'description' : 'Gestion de projets IT, Audit, Programmation',
             'mention' : 'Bien',
-            'timeframe' : '2021'
-        },
-        {
-            'university': '湖师',
-            'degree': '暂无',
-            'description' : 'Gestion de projets IT, Audit, Programmation',
-            'mention' : 'Bien',
-            'timeframe' : '2021'
+            'timeframe' : '2022'
         }
     ],
     'programming_languages' : {

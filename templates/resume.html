@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Resume!</title>
+  <title>简历</title>
   <link rel="stylesheet" href="static/style.css">
 
 </head>
@@ -16,8 +16,10 @@
     <title>Designs by Laighlin</title>
 </head>
 <body onload="draw()">
+
     <canvas id="bg"></canvas>
     <main id="content">
+
         <h1>
             <div class="hex moved"></div><span>关于开发</span></h1>
         <div class="subtext" id="main">
@@ -84,17 +86,17 @@
             <ul>
                 <li>电话: {{person.tel}}</li>
                 <li>邮箱: <a>{{person.email}}</a></li>
-                <li><img src="{{ url_for('static', filename='img/img_nono.jpg') }}" alt="" /></li>
+                <li><img src="{{ url_for('static', filename='img/img.jpg') }}" alt="" /></li>
             </ul>
         </div>
          <h2>
             <div class="hex"></div><span>数据可视化分析经历</span></h2>
         <div class="subtext coll">
            <p><a href="{{url_for('index')}}" target="_blank">有关企鹅数据的分析</a></p>
-
         </div>
 
     </main>
+    <div><h2><font color="red" >简历模板来源：https://freefrontend.com/html-resume-templates/</font></h2></div>
     <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="wave" id="one"><path d="M-13.36,88.98 C168.85,182.73 276.72,-73.84 506.31,79.10 L500.00,150.00 L0.00,150.00 Z"></path></svg>
     <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="wave" id="two"><path d="M-13.36,88.98 C168.85,182.73 276.72,-73.84 506.31,79.10 L500.00,150.00 L0.00,150.00 Z"></path></svg>
     <div id="hex-holder">
@@ -102,6 +104,7 @@
         <div class="hex" id="dos"></div>
         <div class="hex" id="tres"></div>
     </div>
+
 </body>
 
 </html>
